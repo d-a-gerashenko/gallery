@@ -31,3 +31,5 @@ phpcli:
   stdin_open: true
   volumes_from:
     - phpfpm
+  links:
+     - db
