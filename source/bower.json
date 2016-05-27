@@ -1,0 +1,12 @@
+{
+    "name": "node-test",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "bootstrap-sass": "~3.*",
+        "font-awesome": "~4.*",
+        "backbone.marionette": "~2.*",
+        "requirejs": "~2.*",
+        "handlebars": "~2.*"
+    }
+}

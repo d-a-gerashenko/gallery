@@ -1,0 +1,16 @@
+{
+  "name": "node-test",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "grunt": "~0.*",
+    "grunt-coffeelint": "~0.*",
+    "grunt-contrib-clean": "~1.*",
+    "grunt-contrib-coffee": "~1.*",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-copy": "~1.*",
+    "grunt-contrib-uglify": "~1.*",
+    "grunt-contrib-watch": "~1.*",
+    "requirejs": "~2.*"
+  }
+}
