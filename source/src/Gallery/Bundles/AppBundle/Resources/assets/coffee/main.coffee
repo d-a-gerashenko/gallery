@@ -14,7 +14,7 @@ requirejs.config
   shim:
     bootstrap:
       deps: ['jquery']
-
+  urlArgs: "bust=" + (new Date()).getTime()
 require [
   'app'
 ], (App) ->

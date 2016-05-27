@@ -18,7 +18,7 @@ class Image
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Album", inversedBy="images")
+     * @ORM\ManyToOne(targetEntity="Album", inversedBy="albumImages")
      * @ORM\JoinColumn(name="album_id", referencedColumnName="id")
      */
     private $album;
