@@ -1,7 +1,23 @@
 FROM php:5.6-cli
 
-RUN apt-get update --fix-missing && apt-get install -y less vim zip curl git zlib1g-dev php5-mysqlnd
-RUN docker-php-ext-install zip pdo_mysql
+RUN apt-get update --fix-missing
+# install common
+RUN apt-get install -y less vim zip curl git
+# for gd
+RUN apt-get install -y libfreetype6-dev \
+                        libjpeg62-turbo-dev \
+                        libpng12-dev \
+                        libxpm-dev \
+                        libvpx-dev
+
+RUN docker-php-ext-configure gd \
+    		--with-freetype-dir=/usr/lib/x86_64-linux-gnu/ \
+    		--with-jpeg-dir=/usr/lib/x86_64-linux-gnu/ \
+    		--with-xpm-dir=/usr/lib/x86_64-linux-gnu/ \
+    		--with-vpx-dir=/usr/lib/x86_64-linux-gnu/ \
+    	&& \
+    docker-php-ext-install  gd \
+                            pdo_mysql
 
 ADD app.ini /usr/local/etc/php/conf.d/
 
