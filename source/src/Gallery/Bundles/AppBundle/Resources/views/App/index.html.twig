@@ -1,4 +1,15 @@
-{% block body %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Js gallery</title>
+
+    <link href="{{ asset('bundles/gallery/css/main.css') }}" rel="stylesheet"/>
+    <link rel="icon" href="{{ asset('favicon.ico') }}"/>
+
+</head>
+<body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -13,4 +24,7 @@
     </div>
 </section>
 
+{% block javascripts %}
+    <script data-main="{{ asset('bundles/gallery/js/main.js') }}" src="{{ asset('bundles/gallery/js/vendor/require.js') }}"></script>
 {% endblock %}
+</body>

@@ -1,7 +1,12 @@
 .idea
-source/vendor/*
-source/app/cache/*
-source/app/logs/*
+source/vendor
+source/app/cache
+source/app/logs
 source/composer.lock
 source/src/Gallery/Bundles/AppBundle/Resources/assets/coffee/**/*.js
 source/src/Gallery/Bundles/AppBundle/Resources/assets/coffee/**/*.map
+source/web/images/*
+!source/web/images/.gitkeep
+source/node_modules
+source/src/Gallery/Bundles/AppBundle/Resources/assets/components
+source/.sass-cache

@@ -3,7 +3,7 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         publicDir: 'web/bundles/gallery',
-        baseAssetsDir: 'src/Gallery/Bundles/Resources/assets',
+        baseAssetsDir: 'src/Gallery/Bundles/AppBundle/Resources/assets',
         faFontsDir: '<%= baseAssetsDir %>/components/font-awesome/fonts',
         coffeeDir: '<%= baseAssetsDir %>/coffee',
         sassDir: '<%= baseAssetsDir %>/scss',
