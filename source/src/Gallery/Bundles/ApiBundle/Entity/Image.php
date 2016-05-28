@@ -24,11 +24,6 @@ class Image
     private $album;
 
     /**
-     * @ORM\Column(type="integer", nullable=false)
-     */
-    private $position;
-
-    /**
      * @ORM\Column(type="string", nullable=false)
      */
     private $name;
@@ -38,8 +33,6 @@ class Image
      */
     private $path;
     
-    
-
     /**
      * Get id
      *
@@ -49,31 +42,7 @@ class Image
     {
         return $this->id;
     }
-
-    /**
-     * Set position
-     *
-     * @param integer $position
-     *
-     * @return Image
-     */
-    public function setPosition($position)
-    {
-        $this->position = $position;
-
-        return $this;
-    }
-
-    /**
-     * Get position
-     *
-     * @return integer
-     */
-    public function getPosition()
-    {
-        return $this->position;
-    }
-
+    
     /**
      * Set name
      *
