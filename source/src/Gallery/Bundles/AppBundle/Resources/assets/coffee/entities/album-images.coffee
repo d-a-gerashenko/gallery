@@ -20,5 +20,6 @@ define [
     albumImages.fetch
       reset: true,
       success: (data) ->
+        console.log data.albumImages
         console.log 'SUCCESS album images fetch'
     albumImages

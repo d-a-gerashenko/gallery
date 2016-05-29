@@ -1,5 +1,5 @@
 services:
-  object_normalizer:
-    class: Symfony\Component\Serializer\Normalizer\ObjectNormalizer
+  get_set_method_normalizer:
+    class: Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer
     tags:
-        - { name: serializer.normalizer }
+      - { name: serializer.normalizer }

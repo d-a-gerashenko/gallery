@@ -13,6 +13,7 @@ class ApiController extends Controller
 {
     /**
      * @Route("/albums")
+     * @return Response
      */
     public function listAction()
     {
@@ -28,18 +29,29 @@ class ApiController extends Controller
     }
 
     /**
-     * @Route("/album/{id}")
+     * @param int $id
+     * @param int $page
+     * @return Response
+     * @Route("/album/{id}/{page}", defaults={"page" = 1})
      */
-    public function showAction($id)
+    public function showAction($id, $page)
     {
         $album = $this->getDoctrine()->getRepository('ApiBundle:Album')->find($id);
-        if (!$album) {
-            throw new Exception('cannot find album');
-        }
 
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $album->getAlbumImages(),
+            $page
+        );
         $serializer = $this->container->get('serializer');
+        $normalizer = $this->container->get('get_set_method_normalizer');
+        $normalizer->setIgnoredAttributes(['album']);
 
-        $this->container->get('object_normalizer')->setIgnoredAttributes(['album']);
-        return new Response($serializer->serialize($album, 'json'));
+        $result = [
+            'pagination' => $pagination->getPaginationData(),
+            'albumImages' => $pagination
+        ];
+        return new Response($serializer->serialize($result, 'json'));
     }
+
 }
