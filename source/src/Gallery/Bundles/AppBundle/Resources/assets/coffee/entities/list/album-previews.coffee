@@ -1,6 +1,6 @@
 define [
   'backbone'
-  'entities/album-previews-image'
+  'entities/list/album-previews-image'
 ], (
   Backbone
   AlbumPreviewsImage

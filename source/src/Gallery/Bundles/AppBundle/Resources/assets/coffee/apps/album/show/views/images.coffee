@@ -8,7 +8,7 @@ define [
   ImagesTemplate
 ) ->
 
-  class ListView extends Marionette.CollectionView
+  class ImagesView extends Marionette.CollectionView
     template: ImagesTemplate
     childView: ImageView
     className: 'images'

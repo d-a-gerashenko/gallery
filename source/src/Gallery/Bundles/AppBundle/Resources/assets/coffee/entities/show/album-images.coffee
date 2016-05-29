@@ -1,7 +1,7 @@
 define [
   'backbone'
   'bus'
-  'entities/album-image'
+  'entities/show/album-image'
 ], (
   Backbone
   Bus
@@ -10,7 +10,7 @@ define [
 
   class AlbumImages extends Backbone.Collection
     model : AlbumImage,
-    url : '/api/album'
+  ###  url : '/api/album'
 
   Bus.reqres.setHandler 'album:images:entities', (id) ->
     console.log 'album images entities handler with id', id
@@ -22,4 +22,4 @@ define [
       success: (data) ->
         console.log data.albumImages
         console.log 'SUCCESS album images fetch'
-    albumImages
+    albumImages###

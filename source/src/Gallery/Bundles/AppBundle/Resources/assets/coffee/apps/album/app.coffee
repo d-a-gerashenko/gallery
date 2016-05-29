@@ -14,20 +14,27 @@ define [
     appRoutes:
       '' : 'listAlbums'
       'album/:id' : 'showAlbum'
+      'album/:id/page/:page' : 'showAlbum'
 
   API =
     listAlbums: ->
       new ListController
         region: Bus.reqres.request 'main_region'
 
-    showAlbum: (id) ->
+    showAlbum: (id, page = null) ->
       new ShowController
-        id: id,
-        region: Bus.reqres.request 'main_region'
+        id: id
+        page: page
+        main_region: Bus.reqres.request 'main_region'
 
-  Bus.commands.setHandler 'album:show', (view) ->
-    console.log 'album:show:event with id ', view.id
-    Backbone.history.navigate 'album/' + view.id, trigger: true
+  Bus.commands.setHandler 'album:show', (id) ->
+    console.log 'album:show:event with id ', id
+    Backbone.history.navigate 'album/' + id, trigger: true
+
+  Bus.commands.setHandler 'album:page:show', (id, page) ->
+    console.log 'album:show:event with id ', id, ', page ', page
+    Backbone.history.navigate 'album/' + id+'/page/'+page, trigger: true
+
 
   albumsApp = new Marionette.Application
   
