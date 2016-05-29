@@ -1,0 +1,14 @@
+#main-region .album-layout {
+  #pagination {
+
+  }
+  #images-container {
+    .images {
+      border: 1px solid lightgray;
+      text-align: center;
+      .image {
+        margin: 10px
+      }
+    }
+  }
+}

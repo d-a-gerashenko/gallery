@@ -24,10 +24,10 @@ define [
   Bus.reqres.setHandler 'album:images:entities', (id, page = 1, success) ->
     console.log 'album images entities handler with id', id, ', page', page
     albumData = new AlbumData({
-      id: id,
-      page: page
+      id: id
     })
 
+    albumData.url = albumData.urlRoot + '/' + albumData.id + '/' + page
     albumData.fetch
       reset: true
       success: success

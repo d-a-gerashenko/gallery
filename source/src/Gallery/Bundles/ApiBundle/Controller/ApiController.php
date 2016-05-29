@@ -21,9 +21,9 @@ class ApiController extends Controller
         $albumsWithPreviews = $this->getDoctrine()
             ->getRepository('ApiBundle:Album')
             ->findAlbumWithPreviews();
-        
+
         $serializer = $this->container->get('serializer');
-        $this->container->get('object_normalizer')->setIgnoredAttributes(['album']);
+        $this->container->get('get_set_method_normalizer')->setIgnoredAttributes(['album']);
 
         return new Response($serializer->serialize($albumsWithPreviews, 'json'));
     }
