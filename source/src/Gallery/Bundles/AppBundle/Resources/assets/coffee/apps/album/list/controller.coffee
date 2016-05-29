@@ -2,7 +2,7 @@ define [
   'marionette'
   'bus'
   'apps/album/list/views/albums'
-  'entities/albums'
+  'entities/manager'
 ], (
   Marionette
   Bus
@@ -21,4 +21,4 @@ define [
 
       @listenTo albumsView, 'childview:show:album:clicked', (view) ->
         console.log 'album clicked: ', view.model.id
-        Bus.commands.execute 'album:show', view.model
+        Bus.commands.execute 'album:show', view.model.id

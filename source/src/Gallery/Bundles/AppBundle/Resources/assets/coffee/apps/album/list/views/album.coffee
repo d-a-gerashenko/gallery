@@ -14,7 +14,7 @@ define [
     childView: AlbumPreviewImage
 
     initialize: ->
-      @collection = @model.get("albumImages")
+      @collection = @model.get("previews")
 
     triggers: ->
       'click': 'show:album:clicked'

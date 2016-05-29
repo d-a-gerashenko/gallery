@@ -27,7 +27,6 @@ class LoadImagesData implements FixtureInterface
                 $image = new Image();
                 $image->setName('album'.$i.'_'.$j.'_image');
                 $image->setAlbum($album);
-                $image->setPosition($j);
                 $image->setPath($basePath.'album'.$i.'/'.$j.'.jpg');
                 $manager->persist($image);
             }

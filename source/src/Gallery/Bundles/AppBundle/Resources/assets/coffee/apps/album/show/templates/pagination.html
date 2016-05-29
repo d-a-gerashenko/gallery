@@ -1,0 +1,8 @@
+{{#if pagesInRange }}
+    Pages:
+    <ul class="pagination list-inline">
+    {{#each pagesInRange }}
+        <li class="page"><a href="#" data-page="{{this}}">{{this}}</a></li>
+    {{/each}}
+    </ul>
+{{/if}}
