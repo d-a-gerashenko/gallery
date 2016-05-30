@@ -12,6 +12,6 @@ docker exec -it gallery_phpcli_1 app/console doctrine:database:create
 docker exec -it gallery_phpcli_1 app/console doctrine:schema:update --force
 docker exec -it gallery_phpcli_1 app/console doctrine:fixtures:load
 docker exec -it gallery_phpcli_1 npm install
-docker exec -it gallery_phpcli_1 gallery_phpcli_1 bower install --allow-root
+docker exec -it gallery_phpcli_1 bower install --allow-root
 docker exec -it gallery_phpcli_1 grunt
 ```
